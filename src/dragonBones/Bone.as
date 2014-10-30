@@ -428,10 +428,10 @@
 			this._globalTransformMatrix.d = this._global.scaleY * Math.cos(this._global.skewX);
 			*/
 			
-			this._globalTransformMatrix.a = this._offset.scaleX * Math.cos(this._global.skewY);
-			this._globalTransformMatrix.b = this._offset.scaleX * Math.sin(this._global.skewY);
-			this._globalTransformMatrix.c = -this._offset.scaleY * Math.sin(this._global.skewX);
-			this._globalTransformMatrix.d = this._offset.scaleY * Math.cos(this._global.skewX);
+			this._globalTransformMatrix.a = Math.cos(this._global.skewY);
+			this._globalTransformMatrix.b = Math.sin(this._global.skewY);
+			this._globalTransformMatrix.c = -Math.sin(this._global.skewX);
+			this._globalTransformMatrix.d = Math.cos(this._global.skewX);
 			
 			if(_frameCachedDuration > 0)    // && _frameCachedPosition >= 0
 			{
