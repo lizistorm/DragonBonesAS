@@ -247,15 +247,12 @@
 			
 			var parentMatrix:Matrix = this._parent._globalTransformMatrix;
 			
-//			this._globalTransformMatrix.tx = this._global.x = parentMatrix.a * x + parentMatrix.c * y + parentMatrix.tx;
-//			this._globalTransformMatrix.ty = this._global.y = parentMatrix.d * y + parentMatrix.b * x + parentMatrix.ty;
-
-//			this._globalTransformMatrix.tx = this._global.x = parentMatrix.a * x * this._parent._global.scaleX + parentMatrix.c * y * this._parent._global.scaleY + parentMatrix.tx;
-//			this._globalTransformMatrix.ty = this._global.y = parentMatrix.d * y * this._parent._global.scaleY + parentMatrix.b * x * this._parent._global.scaleX + parentMatrix.ty;
-
-            this._globalTransformMatrix.tx = this._global.x = parentMatrix.a * x * (this._parent.origin.scaleX + _parent._tween.scaleX) + parentMatrix.c * y * (this._parent.origin.scaleY + _parent._tween.scaleY) + parentMatrix.tx;
-            this._globalTransformMatrix.ty = this._global.y = parentMatrix.d * y * (this._parent.origin.scaleY + _parent._tween.scaleY) + parentMatrix.b * x * (this._parent.origin.scaleX + _parent._tween.scaleX) + parentMatrix.ty;
-
+			this._globalTransformMatrix.tx = this._global.x = parentMatrix.a * x + parentMatrix.c * y + parentMatrix.tx;
+			this._globalTransformMatrix.ty = this._global.y = parentMatrix.d * y + parentMatrix.b * x + parentMatrix.ty;
+			
+			//this._globalTransformMatrix.tx = this._global.x = parentMatrix.a * x * this._parent._global.scaleX + parentMatrix.c * y * this._parent._global.scaleY + parentMatrix.tx;
+			//this._globalTransformMatrix.ty = this._global.y = parentMatrix.d * y * this._parent._global.scaleY + parentMatrix.b * x * this._parent._global.scaleX + parentMatrix.ty;
+			
 			if(inheritRotation)
 			{
 				this._global.skewX = this._origin.skewX + this._offset.skewX + this._parent._global.skewX;
